@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clients | Lovebyte Logos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glowMove {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(40px, -40px); }
+    }
+
+    .animate-fade-up {
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards;
+    }
+
+    .animate-glow {
+      animation: glowMove 8s ease-in-out infinite;
+    }
+
+    .delay-100 { animation-delay: .1s; }
+    .delay-200 { animation-delay: .2s; }
+    .delay-300 { animation-delay: .3s; }
+  </style>
+</head>
+
+<body class="min-h-screen overflow-x-hidden bg-slate-950 text-white">
+
+  <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#60a5fa55,transparent_35%),radial-gradient(circle_at_bottom_right,#a78bfa55,transparent_35%)]"></div>
+  <div class="animate-glow fixed left-20 top-28 -z-10 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl"></div>
+  <div class="animate-glow fixed bottom-20 right-20 -z-10 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl"></div>
+
+  <header class="sticky top-5 z-50 mx-auto mt-5 flex w-[90%] max-w-6xl animate-fade-up items-center justify-between rounded-3xl border border-white/15 bg-white/10 px-8 py-4 shadow-2xl backdrop-blur-xl">
+    <a href="index.html" class="text-2xl font-bold tracking-wide">Lovebyte Games</a>
+
+    <nav class="flex gap-6 text-sm text-white/75 font-bold">
+      <a href="index.html" class="transition duration-300 hover:scale-110 hover:text-white">Home</a>
+      <a href="clients.html" class="text-white">Clients</a>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-6 py-24">
+    <section class="text-center">
+      <h1 class="animate-fade-up bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text py-2 text-5xl font-black leading-[1.2] text-transparent md:text-7xl">
+        Clients
+      </h1>
+
+      <p class="delay-100 mx-auto mt-5 max-w-2xl animate-fade-up text-lg text-white/60">
+        Brands, studios, and creators I’ve worked with.
+      </p>
+    </section>
+
+    <section class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="delay-100 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-6 text-center shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:bg-white/15">
+        <img src="https://cdn.discordapp.com/avatars/1037795701339463730/291fb00dc75f5572dfa5a7bab4548e7c.webp?size=1024" alt="Beyond Constraints logo" class="mx-auto mb-5 h-24 max-w-[80%] object-contain" />
+        <h3 class="text-xl font-bold">Beyond Constraints <br />Lime Dragon</h3>
+        <p class="mt-2 text-white/60">Visual novel project</p>
+      </div>
+      <!---
+      <div class="delay-200 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-6 text-center shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:bg-white/15">
+        <img src="" alt="Example Studio logo" class="mx-auto mb-5 h-24 max-w-[80%] object-contain" />
+        <h3 class="text-xl font-bold">Example Studio</h3>
+        <p class="mt-2 text-white/60">Game studio branding</p>
+      </div>
+
+      <div class="delay-300 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-6 text-center shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:bg-white/15">
+        <img src="" alt="Example Games logo" class="mx-auto mb-5 h-24 max-w-[80%] object-contain" />
+        <h3 class="text-xl font-bold">Example Games</h3>
+        <p class="mt-2 text-white/60">Logo commission</p>
+      </div>
+    -->
+    </section>
+  </main>
+
+  <footer class="py-8 text-center text-white/50">
+    © 2026 Lovebyte Games. All rights reserved.
+  </footer>
+
+</body>
+</html>
