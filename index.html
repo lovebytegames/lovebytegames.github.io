@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lovebyte Games
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+    }
+
+    @keyframes glowMove {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(40px, -40px); }
+    }
+
+    .animate-fade-up {
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards;
+    }
+
+    .animate-float {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .animate-glow {
+      animation: glowMove 8s ease-in-out infinite;
+    }
+
+    .delay-100 { animation-delay: .1s; }
+    .delay-200 { animation-delay: .2s; }
+    .delay-300 { animation-delay: .3s; }
+    .delay-400 { animation-delay: .4s; }
+    .delay-500 { animation-delay: .5s; }
+    .delay-600 { animation-delay: .6s; }
+  </style>
+</head>
+
+<body class="min-h-screen overflow-x-hidden scroll-smooth bg-slate-950 text-white">
+
+  <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#60a5fa55,transparent_35%),radial-gradient(circle_at_bottom_right,#a78bfa55,transparent_35%)]"></div>
+
+  <div class="animate-glow fixed left-20 top-28 -z-10 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl"></div>
+  <div class="animate-glow fixed bottom-20 right-20 -z-10 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl"></div>
+
+  <header class="sticky top-5 z-50 mx-auto mt-5 flex w-[90%] max-w-6xl animate-fade-up items-center justify-between rounded-3xl border border-white/15 bg-white/10 px-8 py-4 shadow-2xl backdrop-blur-xl">
+    <div class="text-2xl font-bold tracking-wide">Lovebyte Games</div>
+
+    <nav class="flex gap-6 text-sm text-white/75">
+      <a href="#work" class="transition duration-300 hover:scale-110 hover:text-white">Work</a>
+      <!-- <a href="#about" class="transition duration-300 hover:scale-110 hover:text-white">About</a> -->
+      <a href="#contact" class="transition duration-300 hover:scale-110 hover:text-white">Contact</a>
+      <a href="#faq" class="transition duration-300 hover:scale-110 hover:text-white">FAQ</a>
+    </nav>
+  </header>
+
+  <section class="px-6 py-28 text-center">
+    <h1 class="mx-auto max-w-4xl animate-fade-up bg-gradient-to-r from-purple-700 via-blue-100 to-purple-700 bg-clip-text text-5xl font-black leading-[1.3] text-transparent md:text-8xl py-3">
+  Lovebyte Logos
+    </h1>
+
+    <p class="delay-200 mx-auto mt-6 max-w-2xl animate-fade-up text-lg text-white/65">
+      Clean, modern logos for visual novels.
+    </p>
+
+    <a href="#work" class="delay-300 mt-8 inline-block animate-fade-up rounded-full border border-white/20 bg-white/10 px-8 py-3 font-bold backdrop-blur-xl transition duration-300 hover:scale-105 hover:bg-white/20">
+      View My Work
+    </a>
+  </section>
+
+  <section id="work" class="mx-auto max-w-6xl px-6 py-16">
+    <h2 class="mb-10 animate-fade-up text-center text-4xl font-bold">Featured Work</h2>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+
+  <div class="group delay-100 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-3 hover:rotate-1 hover:bg-white/15">
+    <div class="mb-5 flex h-32 items-center justify-center rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+      <img src="BC_logo.png" class="h-full object-contain p-2">
+    </div>
+    <h3 class="text-xl font-bold">Beyond Constraints</h3>
+    <p class="mt-2 text-white/60 underline">
+      <a href="https://subscribestar.adult/davos" target="_blank" class="hover:text-purple-400">https://subscribestar.adult/davos</a>
+    </p>
+  </div>
+
+  <div class="group delay-200 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-3 hover:-rotate-1 hover:bg-white/15">
+    <div class="mb-5 flex h-32 items-center justify-center rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+      <img src="ex_game_1.png" class="h-full object-contain p-2">
+    </div>
+    <h3 class="text-xl font-bold">Example Studio Name</h3>
+    <p class="mt-2 text-white/60">Example.</p>
+  </div>
+
+  <div class="group delay-300 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-3 hover:rotate-1 hover:bg-white/15">
+    <div class="mb-5 flex h-32 items-center justify-center rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+      <img src="ex_game_2.png" class="h-full object-contain p-2">
+    </div>
+    <h3 class="text-xl font-bold">Example Studio Name</h3>
+    <p class="mt-2 text-white/60">Example.</p>
+  </div>
+
+  <div class="group delay-400 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-3 hover:-rotate-1 hover:bg-white/15">
+    <div class="mb-5 flex h-32 items-center justify-center rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+      <img src="ex_game_3.png" class="h-full object-contain p-2">
+    </div>
+    <h3 class="text-xl font-bold">Example Studio Name</h3>
+    <p class="mt-2 text-white/60">Example.</p>
+  </div>
+</div>
+  </section>
+
+  <!--<section id="about" class="mx-auto max-w-3xl px-6 py-16 text-center">
+    <h2 class="mb-8 animate-fade-up text-4xl font-bold">About</h2>
+
+    <div class="animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-8 text-white/70 shadow-2xl backdrop-blur-xl transition duration-500 hover:scale-[1.02] hover:bg-white/15">
+      I design modern, bold, and memorable logos for games and brands.
+      My style focuses on simplicity, clarity, and impact.
+    </div>
+  </section> -->
+
+  <section id="contact" class="mx-auto max-w-3xl px-6 py-16 text-center">
+    <h2 class="mb-8 animate-fade-up text-4xl font-bold">Contact</h2>
+
+    <div class="animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-8 text-white/70 shadow-2xl backdrop-blur-xl transition duration-500 hover:scale-[1.02] hover:bg-white/15">
+      Do you want to work together? I'm open to logo requests via Discord.
+      <br />
+
+      <div class="mt-6 inline-block rounded-full bg-gradient-to-r from-purple-900 to-purple-600 px-7 py-3 font-bold text-white transition duration-300 hover:scale-105 hover:shadow-lg">
+        @lovebytegames on Discord
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="mx-auto max-w-4xl px-6 py-16">
+  <h2 class="mb-8 animate-fade-up text-center text-4xl font-bold">FAQ</h2>
+
+  <div class="space-y-5">
+    <details class="animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-300 hover:bg-white/15">
+      <summary class="cursor-pointer text-lg font-bold">How long does a logo take?</summary>
+      <p class="mt-4 text-white/65">
+        I can take just over an hour or more to create a logo, it only depends on the complexity and revisions.
+      </p>
+    </details>
+
+    <details class="animate-fade-up delay-100 rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-300 hover:bg-white/15">
+      <summary class="cursor-pointer text-lg font-bold">How much does a logo cost?</summary>
+      <p class="mt-4 text-white/65">
+        The price depends on the design elements and the time required.
+      </p>
+    </details>
+
+    <details class="animate-fade-up delay-200 rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-300 hover:bg-white/15">
+      <summary class="cursor-pointer text-lg font-bold">Can I request changes?</summary>
+      <p class="mt-4 text-white/65">
+        Yes, revisions are free, if you're not satisfied with the logo, I will work with you until you are happy with the final design.
+      </p>
+    </details>
+
+    <details class="animate-fade-up delay-200 rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-300 hover:bg-white/15">
+      <summary class="cursor-pointer text-lg font-bold">How do I pay?</summary>
+      <p class="mt-4 text-white/65">
+        Payment can be made via PayPal. I will provide you with my PayPal username once we agree on the logo details and price.
+      </p>
+    </details>
+
+    <details class="animate-fade-up delay-300 rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-300 hover:bg-white/15">
+      <summary class="cursor-pointer text-lg font-bold">What files do I receive?</summary>
+      <p class="mt-4 text-white/65">
+        You will recieve a high-resolution PNG with a transparent background in a zip file.
+      </p>
+    </details>
+  </div>
+</section>
+
+  <footer class="py-8 text-center text-white/50">
+    © 2026 Lovebyte Games. All rights reserved.
+  </footer>
+
+</body>
+</html>
