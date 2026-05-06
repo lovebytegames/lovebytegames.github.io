@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favorite Visual Novels | Lovebyte Games</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <style>
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glowMove {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(40px, -40px);
+      }
+    }
+
+    .animate-fade-up {
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards;
+    }
+
+    .animate-glow {
+      animation: glowMove 8s ease-in-out infinite;
+    }
+
+    .delay-100 { animation-delay: .1s; }
+    .delay-200 { animation-delay: .2s; }
+    .delay-300 { animation-delay: .3s; }
+    .delay-400 { animation-delay: .4s; }
+
+    .shine-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shine-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.12),
+        transparent
+      );
+      transform: skewX(-25deg);
+    }
+
+    .shine-card:hover::before {
+      animation: shine 0.8s ease;
+    }
+
+    @keyframes shine {
+      100% {
+        left: 125%;
+      }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen overflow-x-hidden bg-slate-950 text-white">
+
+  <!-- Background -->
+  <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#60a5fa55,transparent_35%),radial-gradient(circle_at_bottom_right,#a78bfa55,transparent_35%)]"></div>
+
+  <div class="animate-glow fixed left-20 top-28 -z-10 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl"></div>
+
+  <div class="animate-glow fixed bottom-20 right-20 -z-10 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl"></div>
+
+  <!-- Navbar -->
+  <header class="sticky top-5 z-50 mx-auto mt-5 flex w-[90%] max-w-6xl animate-fade-up items-center justify-between rounded-3xl border border-white/15 bg-white/10 px-8 py-4 shadow-2xl backdrop-blur-xl">
+    
+    <a href="index.html" class="text-2xl font-bold tracking-wide">
+      Lovebyte Games
+    </a>
+
+    <nav class="flex gap-6 text-sm text-white/75 font-bold">
+      <a href="index.html" class="transition duration-300 hover:scale-110 hover:text-white">
+        Home
+      </a>
+
+      <a href="clients.html" class="transition duration-300 hover:scale-110 hover:text-white">
+        Clients
+      </a>
+
+      <a href="vn.html" class="text-white">
+        Visual Novels
+      </a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="px-6 py-24 text-center">
+    <h1 class="animate-fade-up bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 bg-clip-text py-2 text-5xl font-black leading-[1.2] text-transparent md:text-7xl">
+      Favorite Visual Novels
+    </h1>
+
+    <p class="delay-100 mx-auto mt-6 max-w-2xl animate-fade-up text-lg text-white/60">
+      Some of my favorite visual novels.
+    </p>
+  </section>
+
+  <!-- VN List -->
+  <main class="mx-auto max-w-6xl px-6 pb-20">
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Card -->
+      <div class="shine-card delay-100 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:bg-white/15">
+
+        <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+          <img
+            src="https://img.itch.zone/aW1nLzE5MTkwMzUyLnBuZw==/315x250%23c/ieU2Mj.png"
+            alt="Visual Novel Cover"
+            class="h-72 w-full object-cover"
+          />
+        </div>
+
+        <div class="mt-5">
+          <h2 class="text-2xl font-bold">Fairwood Retreat 87</h2>
+
+          <p class="mt-3 text-sm leading-relaxed text-white/60">
+            A adult visual novel with many hot/beautiful characters, set in 1987. Art gets better as the story goes on, story is fun and has a lot of heart put into it. 
+          </p>
+
+          <div class="mt-5 flex gap-2">
+            <span class="rounded-full bg-pink-500/20 px-3 py-1 text-xs text-pink-200">
+              Romance
+            </span>
+
+            <span class="rounded-full bg-red-500/20 px-3 py-1 text-xs text-red-200">
+              Horror
+            </span>
+          </div>
+
+          <a href="https://sakurablossomgames.itch.io/fairwood-retreat-87" target="_blank"
+            class="mt-5 inline-block text-sm font-medium text-white/300 transition hover:text-purple-200 hover:underline">
+            <i class="fa-brands fa-itch-io"></i> View on Itch.io
+          </a>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="shine-card delay-200 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:bg-white/15">
+
+        <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+          <img
+            src="https://img.itch.zone/aW1hZ2UvMzI0OTkwMS8xOTQxNTc1Mi5wbmc=/original/%2FYnmHV.png"
+            alt="Visual Novel Cover"
+            class="h-72 w-full object-cover"
+          />
+        </div>
+
+        <div class="mt-5">
+          <h2 class="text-2xl font-bold">Heaven's Door</h2>
+
+          <p class="mt-3 text-sm leading-relaxed text-white/60">
+            Beautiful visuals from the start, created by the same developers of Bare Witness. Story is fantastic with many sexy characters.
+          </p>
+
+          <div class="mt-5 flex gap-2">
+            <span class="rounded-full bg-pink-500/20 px-3 py-1 text-xs text-pink-200">
+              Romance
+            </span>
+
+            <span class="rounded-full bg-yellow-500/20 px-3 py-1 text-xs text-yellow-200">
+              Funny
+            </span>
+          </div>
+
+           <a href="https://alterworlds.itch.io/heavens-door" target="_blank"
+            class="mt-5 inline-block text-sm font-medium text-white/300 transition hover:text-purple-200 hover:underline">
+            <i class="fa-brands fa-itch-io"></i> View on Itch.io
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="shine-card delay-300 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:bg-white/15">
+
+        <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+          <img
+            src="https://img.gg.deals/c9/7a/96d9c3071291df40130f799cb7500bf8919b_912cr513.jpg"
+            alt="Visual Novel Cover"
+            class="h-72 w-full object-cover"
+          />
+        </div>
+
+        <div class="mt-5">
+          <h2 class="text-2xl font-bold">Summer's Gone (S1/S2)</h2>
+
+          <p class="mt-3 text-sm leading-relaxed text-white/60">
+            Absoloutely stunning visuals, music and story. In my top 10 of all time. A very emotional, relatable story, worth a play.
+          </p>
+
+          <div class="mt-5 flex gap-2">
+            <span class="rounded-full bg-red-500/20 px-3 py-1 text-xs text-red-200">
+              Psychological
+            </span>
+
+            <span class="rounded-full bg-pink-500/20 px-3 py-1 text-xs text-pink-200">
+              Romance
+            </span>
+          </div>
+
+           <a href="https://store.steampowered.com/app/2240150/Summers_Gone__Season_1/" target="_blank"
+            class="mt-5 inline-block text-sm font-medium text-white/300 transition hover:text-purple-200 hover:underline">
+            <i class="fa-brands fa-steam"></i> View on Steam
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 text-center text-white/40">
+    © 2026 Lovebyte Games. All rights reserved.
+  </footer>
+
+</body>
+</html>
