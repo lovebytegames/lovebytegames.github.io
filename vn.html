@@ -7,8 +7,13 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <style>
+   <style>
+    h1 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+    }
+
     @keyframes fadeUp {
       from {
         opacity: 0;
@@ -73,7 +78,7 @@
         left: 125%;
       }
     }
-
+/*
     .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -82,10 +87,52 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+*/
 
+#cardScroller {
+  scrollbar-width: thin;
+  scrollbar-color: #a78bfa transparent;
+}
+
+#cardScroller::-webkit-scrollbar {
+  height: 8px;
+}
+
+#cardScroller::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#cardScroller::-webkit-scrollbar-thumb {
+  background: #a78bfa;
+  border-radius: 999px;
+}
+
+#cardScroller::-webkit-scrollbar-thumb:hover {
+  background: #c4b5fd;
+}
+
+#cardScroller::-webkit-scrollbar-button {
+  display: none;
+}
 
 .button::before {
   pointer-events: none;
+}
+
+@keyframes bgMove {
+  0% {
+    transform: translate(0, 0) scale(1.1);
+  }
+  50% {
+    transform: translate(-40px, -40px) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1.1);
+  }
+}
+
+.animate-bg-move {
+  animation: bgMove 6s ease-in-out infinite;
 }
 
 :root {
@@ -109,6 +156,9 @@
 
   --tag-bdsm-bg: rgba(0, 0, 0, 0.2);
   --tag-bdsm-text: #cbd5e1;
+
+  --tag-lesbian-bg: rgba(236, 72, 153, 0.2);
+  --tag-lesbian-text: #f9a8d4;
 }
 
 
@@ -149,21 +199,42 @@
   color: var(--tag-bdsm-text);
 }
 
+.tag-lesbian {
+  background: var(--tag-lesbian-bg);
+  color: var(--tag-lesbian-text);
+}
+
+
 
   </style>
 </head>
 
 <body class="min-h-screen overflow-x-hidden bg-slate-950 text-white">
 
+  <div class="fixed inset-0 -z-20 overflow-hidden">
+
+  <!-- BACKGROUND IMAGE -->
+  <img
+    src="za48dsj.png"
+    class="animate-bg-move w-full h-full object-cover blur-1xl scale-110 opacity-90"
+    alt=""
+  />
+
+  <!-- DARK OVERLAY (important for readability) -->
+  <div class="absolute inset-0 bg-slate-950/70"></div>
+
+</div>  
+
   <!-- Background -->
-  <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#60a5fa55,transparent_35%),radial-gradient(circle_at_bottom_right,#a78bfa55,transparent_35%)]"></div>
+  <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#60a5fa55,transparent_35%),radial-gradient(circle_at_bottom_right,#a78bfa55,transparent_10%)]"></div>
 
   <div class="animate-glow fixed left-20 top-28 -z-10 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl"></div>
 
   <div class="animate-glow fixed bottom-20 right-20 -z-10 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl"></div>
 
   <!-- Navbar -->
-  <header class="sticky top-5 z-50 mx-auto mt-5 flex w-[90%] max-w-6xl animate-fade-up items-center justify-between rounded-3xl border border-white/15 bg-white/10 px-8 py-4 shadow-2xl backdrop-blur-xl">
+  <header id="navbar"
+  class="fixed left-1/2 top-5 z-50 mx-auto flex w-[90%] max-w-6xl -translate-x-1/2 items-center justify-between rounded-3xl border border-white/15 bg-white/10 px-8 py-4 shadow-2xl backdrop-blur-xl transition-all duration-300 ease-out">
     
     <a href="index.html" class="text-2xl font-bold tracking-wide">
       Lovebyte Games
@@ -172,56 +243,62 @@
     <nav class="flex gap-6 text-sm text-white/75 font-bold">
       <a href="index.html" class="transition duration-300 hover:scale-110 hover:text-white">
         Home
-      </a>
-
-      <a href="clients.html" class="transition duration-300 hover:scale-110 hover:text-white">
-        Clients
-      </a>
+      </a>|
 
       <a href="vn.html" class="text-white">
-        Visual Novels
+        VN Ratings
       </a>
     </nav>
   </header>
 
   <!-- Hero -->
   <section class="px-6 py-24 text-center">
-    <h1 class="animate-fade-up bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 bg-clip-text py-2 text-5xl font-black leading-[1.2] text-transparent md:text-7xl">
-      Favorite Visual Novels
+    <h1 class="font-[Bricolage_Grotesque] animate-fade-up bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 bg-clip-text py-2 text-5xl font-black leading-[1.2] text-transparent md:text-7xl">
+      Visual Novel Ratings
     </h1>
 
     <p class="delay-100 mx-auto mt-6 max-w-2xl animate-fade-up text-lg text-white/60">
-      Some of my favorite <strong style="color: #b56ce3;">visual novels</strong>.
+      Some of my played <strong style="color: #b56ce3;">visual novels</strong> rated.
     </p>
   </section>
 
+
 <!-- VN List -->
-<div class="relative max-w-6xl mx-auto">
+<div class="relative max-w-[1400px] mx-auto">
+
+      <div class="mb-1 flex justify-start">
+  <button onclick="sortByRating()"
+    class="rounded-full border border-white/10 bg-white/10 px-5 py-2 text-sm font-bold text-white backdrop-blur-xl transition hover:bg-yellow-400/50 hover:scale-105">
+    <i class="fa-solid fa-star" style="color: rgb(255, 255, 255);"></i> Sort by Rating
+  </button>
+</div>
+
 
   <!-- LEFT ARROW -->
   <button onclick="scrollCards(-1)"
   class="absolute -left-12 top-1/2 z-50 -translate-y-1/2 rounded-full border border-white/10 bg-white/10 px-4 py-3 text-white backdrop-blur-xl transition hover:bg-white/20">
-  ❮
+  <i class="fa-solid fa-arrow-left" style="color: rgb(255, 255, 255);"></i>
 </button>
 
 <button onclick="scrollCards(1)"
   class="absolute -right-12 top-1/2 z-50 -translate-y-1/2 rounded-full border border-white/10 bg-white/10 px-4 py-3 text-white backdrop-blur-xl transition hover:bg-white/20">
-  ❯
+  <i class="fa-solid fa-arrow-right" style="color: rgb(255, 255, 255);"></i>
 </button>
 
   <!-- SCROLLER -->
-  <div id="cardScroller"
-    class="no-scrollbar flex gap-8 overflow-x-auto scroll-smooth px-2 py-6 snap-x snap-mandatory">
+<div id="cardScroller"
+  class="flex gap-8 overflow-x-scroll scroll-smooth py-6 pb-8 snap-x snap-mandatory">
+
+  
 
     <!-- cards -->
-
       <!-- Card 1 -->
-      <div class="shine-card group min-w-[340px] max-w-[340px] snap-start rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:bg-white/15">
+      <div data-order="1" data-rating="8.5" class="shine-card group min-w-[340px] max-w-[340px] snap-start rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:bg-white/15">
         <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
           <img src="https://img.itch.zone/aW1nLzE5MTkwMzUyLnBuZw==/315x250%23c/ieU2Mj.png"
             alt="Fairwood Retreat 87"
             class="h-72 w-full object-cover" />
-        </div>
+        </div>        
 
         <div class="mt-5">
           <h2 class="text-2xl font-bold">Fairwood Retreat 87</h2>
@@ -236,7 +313,7 @@
 
           <a href="https://sakurablossomgames.itch.io/fairwood-retreat-87" target="_blank"
             class="mt-5 inline-block text-sm font-medium text-white transition hover:text-purple-200 hover:underline">
-            <i class="fa-brands fa-itch-io"></i> View on Itch.io
+            <i class="fa-brands fa-itch-io"></i> <strong>View on Itch.io</strong>
           </a>
         </div>
 
@@ -245,8 +322,9 @@
 </div>
       </div>
 
+
       <!-- Card 2 -->
-      <div class="shine-card group min-w-[340px] max-w-[340px] snap-start rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:bg-white/15">
+      <div data-order="2" data-rating="8" class="shine-card group min-w-[340px] max-w-[340px] snap-start rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:bg-white/15">
         <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
           <img src="https://img.itch.zone/aW1hZ2UvMzI0OTkwMS8xOTQxNTc1Mi5wbmc=/original/%2FYnmHV.png"
             alt="Heaven's Door"
@@ -266,7 +344,7 @@
 
           <a href="https://alterworlds.itch.io/heavens-door" target="_blank"
             class="mt-5 inline-block text-sm font-medium text-white transition hover:text-purple-200 hover:underline">
-            <i class="fa-brands fa-itch-io"></i> View on Itch.io
+            <i class="fa-brands fa-itch-io"></i> <strong>View on Itch.io</strong>
           </a>
         </div>
 
@@ -276,7 +354,7 @@
       </div>
 
       <!-- Card 3 -->
-      <div class="shine-card group min-w-[340px] max-w-[340px] snap-start rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:bg-white/15">
+      <div data-order="3" data-rating="9" class="shine-card group min-w-[340px] max-w-[340px] snap-start rounded-3xl border border-white/10 bg-yellow-500/20 p-5 shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:bg-white/15">
         <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
           <img src="https://img.gg.deals/c9/7a/96d9c3071291df40130f799cb7500bf8919b_912cr513.jpg"
             alt="Summer's Gone"
@@ -296,7 +374,7 @@
 
           <a href="https://store.steampowered.com/app/2240150/Summers_Gone__Season_1/" target="_blank"
             class="mt-5 inline-block text-sm font-medium text-white transition hover:text-purple-200 hover:underline">
-            <i class="fa-brands fa-steam"></i> View on Steam
+            <i class="fa-brands fa-steam"></i> <strong>View on Steam</strong>
           </a>
         </div>
 
@@ -306,7 +384,7 @@
       </div>
 
       <!-- Card 4 -->
-      <div class="shine-card group min-w-[340px] max-w-[340px] snap-start rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:bg-white/15">
+      <div data-order="4" data-rating="9.5" class="shine-card group min-w-[340px] max-w-[340px] snap-start rounded-3xl border border-white/10 bg-yellow-500/20 p-5 shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:bg-white/15">
         <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
           <img src="https://img.itch.zone/aW1nLzI1MDUyMjQ5LmpwZw==/315x250%23c/02Pbyy.jpg"
             alt="Karlsson's Gambit"
@@ -327,7 +405,7 @@
 
           <a href="https://grymgudinnagames.itch.io/karlssons-gambit" target="_blank"
             class="mt-5 inline-block text-sm font-medium text-white transition hover:text-purple-200 hover:underline">
-            <i class="fa-brands fa-itch-io"></i> View on Itch.io
+            <i class="fa-brands fa-itch-io"></i> <strong>View on Itch.io</strong>
           </a>
         </div>
 
@@ -337,7 +415,7 @@
       </div>
 
       <!-- Card 5 -->
-      <div class="shine-card group min-w-[340px] max-w-[340px] snap-start rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:bg-white/15">
+      <div data-order="5" data-rating="9.5" class="shine-card group min-w-[340px] max-w-[340px] snap-start rounded-3xl border border-white/10 bg-yellow-500/20 p-5 shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:bg-white/15">
         <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
           <img src="https://img.itch.zone/aW1nLzI3MDA2Nzg1LnBuZw==/315x250%23c/8rpQXL.png"
             alt="Moving Down"
@@ -358,12 +436,43 @@
 
           <a href="https://mironyu.itch.io/moving-down" target="_blank"
             class="mt-5 inline-block text-sm font-medium text-white transition hover:text-purple-200 hover:underline">
-            <i class="fa-brands fa-itch-io"></i> View on Itch.io
+            <i class="fa-brands fa-itch-io"></i> <strong>View on Itch.io</strong>
           </a>
         </div>
 
         <div class="absolute bottom-4 right-4 rounded-full bg-yellow-400/20 px-3 py-1 text-xs font-semibold text-yellow-300 backdrop-blur-md border border-yellow-400/20">
   <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 9.5
+</div>
+      </div>
+
+       <!-- Card 6 -->
+      <div data-order="6" data-rating="5.5" class="shine-card group min-w-[340px] max-w-[340px] snap-start rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:bg-white/15">
+        <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+          <img src="https://images.boosty.to/image/926f004e-0cf2-4312-8919-a50d4a2303c2?change_time=1757151975"
+            alt="Betrayal"
+            class="h-72 w-full object-cover" />
+        </div>
+
+        <div class="mt-5">
+          <h2 class="text-2xl font-bold">Betrayal</h2>
+          <p class="mt-3 text-sm leading-relaxed text-white/60">
+            A story very similar to Yesterday's Crossroads, with render quality awfully close, and the male protagonist looking the same with a small amount of content.
+            Some nice characters though.
+          </p>
+
+          <div class="mt-5 flex gap-2">
+            <span class="tag tag-lesbian">Lesbian</span>
+            <span class="tag tag-romance">Romance</span>
+          </div>
+
+          <a href="https://www.patreon.com/cw/Frxnz" target="_blank"
+            class="mt-5 inline-block text-sm font-medium text-white transition hover:text-purple-200 hover:underline">
+            <i class="fa-brands fa-patreon"></i> <strong>View on Patreon</strong>
+          </a>
+        </div>
+
+        <div class="absolute bottom-4 right-4 rounded-full bg-yellow-400/20 px-3 py-1 text-xs font-semibold text-yellow-300 backdrop-blur-md border border-yellow-400/20">
+  <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 5.5
 </div>
       </div>
 
@@ -493,15 +602,59 @@
   </footer>
 
 <script>
-  function scrollCards(direction) {
-    const container = document.getElementById("cardScroller");
+  let sortedByRating = false;
 
-    container.scrollBy({
-      left: direction * 380,
+  function scrollCards(direction) {
+    const scroller = document.getElementById("cardScroller");
+    const card = scroller.querySelector(".shine-card");
+
+    if (!card) return;
+
+    const gap = 32; // gap-8 = 32px
+    const amount = card.offsetWidth + gap;
+
+    scroller.scrollBy({
+      left: direction * amount,
       behavior: "smooth"
     });
   }
+
+  function sortByRating() {
+    const scroller = document.getElementById("cardScroller");
+    const cards = Array.from(scroller.querySelectorAll("[data-rating]"));
+
+    cards.sort((a, b) => {
+      if (!sortedByRating) {
+        return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
+      }
+
+      return parseInt(a.dataset.order) - parseInt(b.dataset.order);
+    });
+
+    cards.forEach(card => scroller.appendChild(card));
+
+    scroller.scrollTo({
+      left: 0,
+      behavior: "smooth"
+    });
+
+    sortedByRating = !sortedByRating;
+  }
 </script>
+
+
+<script>
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("wheel", (e) => {
+    if (e.deltaY > 0) {
+      navbar.classList.add("-translate-y-[140%]", "opacity-0");
+    } else {
+      navbar.classList.remove("-translate-y-[140%]", "opacity-0");
+    }
+  });
+</script>
+
 
 </body>
 </html>
