@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Night over Day | Lovebyte Games</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      font-family: "Bricolage Grotesque", sans-serif;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+    }
+
+    .reveal.active {
+      animation: fadeUp 0.9s ease forwards;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen overflow-x-hidden bg-slate-950 text-white">
+
+  <!-- Background -->
+  <div class="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,#60a5fa55,transparent_35%),radial-gradient(circle_at_bottom_right,#a855f755,transparent_35%)]"></div>
+  <div class="fixed inset-0 -z-10 bg-slate-950/70"></div>
+
+  <!-- Navbar -->
+  <header class="fixed left-1/2 top-5 z-50 flex w-[90%] max-w-6xl -translate-x-1/2 items-center justify-between rounded-3xl border border-white/15 bg-white/10 px-8 py-4 shadow-2xl backdrop-blur-xl">
+    <a href="index.html" class="text-2xl font-black tracking-wide">
+      Lovebyte Games
+    </a>
+
+    <nav class="flex items-center gap-6 text-sm font-bold text-white/70">
+      <a href="index.html" class="transition duration-300 hover:scale-110 hover:text-white">Home</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-32">
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+
+      <div class="reveal">
+        <p class="mb-4 inline-flex rounded-full border border-purple-400/20 bg-purple-500/10 px-4 py-2 text-sm font-bold text-purple-200">
+          Adult Visual Novel
+        </p>
+
+        <h1 class="text-6xl font-black leading-[1.05] md:text-8xl">
+          Night over Day
+        </h1>
+
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/65">
+          A cinematic adult visual novel focused on atmosphere, emotional choices,
+          character moments, and immersive storytelling.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="https://github.com/lovebytegames/avn-logos/releases/download/nod/nightoverday-0.15.1-pc.zip" download
+            class="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-purple-900 to-purple-700 px-8 py-4 font-black text-white shadow-lg transition hover:scale-105">
+            <i class="fa-solid fa-download"></i>
+            Download Now
+          </a>
+
+          <a href="#screenshots"
+            class="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-8 py-4 font-black text-white transition hover:bg-white/20">
+            <i class="fa-solid fa-images"></i>
+            Screenshots
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal glass rounded-[2rem] p-4 shadow-2xl">
+        <img
+          src="https://www.oppaiman.com/_next/image/?url=https%3A%2F%2Fcdn-uploads.oppaiman.com%2F693b76d23a57cab967a93c67%2F693b77319a51bb884554afc1%2Fgame-page%2Fvertical-capsule%2F2c345f2ae79245f833b1e3ea210c1f55595017bda1b222647f83722f980d049b.png&w=384&q=75"
+          alt="Night over Day cover"
+          class="h-[520px] w-full rounded-[1.5rem] object-cover"
+        />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Info Cards -->
+  <section class="mx-auto max-w-6xl px-6 py-24">
+      <div class="reveal glass rounded-3xl p-7">
+        <i class="fa-brands fa-windows text-3xl text-blue-300"></i>
+        <h3 class="mt-5 text-2xl font-black">Windows</h3>
+        <p class="mt-3 text-white/60">
+          Download the latest build directly from this page.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section id="screenshots" class="mx-auto max-w-7xl px-6 py-24">
+    <h2 class="reveal text-center text-5xl font-black md:text-7xl">
+      Screenshots
+    </h2>
+
+    <p class="reveal mx-auto mt-5 max-w-2xl text-center text-white/60">
+      A few screenshots, but there's more when you start playing.
+    </p>
+
+    <div class="mt-24 space-y-32">
+
+      <div class="reveal grid items-center gap-10 lg:grid-cols-2">
+        <div class="glass rounded-[2rem] p-4">
+          <img src="https://www.oppaiman.com/_next/image/?url=https%3A%2F%2Fcdn-uploads.oppaiman.com%2F693b76d23a57cab967a93c67%2F693b77319a51bb884554afc1%2Fgame-page%2Fimages%2Fab033fbcb97f6b3f4476c90469da3be2c58eb0cc8c1827e07299a5e23b2f28b3.png&w=1920&q=75" alt="Night over Day screenshot 1"
+            class="rounded-[1.5rem] object-cover transition duration-700 hover:scale-[1.02]" />
+        </div>
+
+        <div>
+          <h3 class="text-4xl font-black">Made with care.</h3>
+          <p class="mt-5 text-lg leading-relaxed text-white/60">
+            Beautiful characters made from scratch. No ugly features, of course.
+          </p>
+        </div>
+      </div>
+
+      <div class="reveal grid items-center gap-10 lg:grid-cols-2">
+        <div class="order-2 lg:order-1">
+          <h3 class="text-4xl font-black">Bizzare moments.</h3>
+          <p class="mt-5 text-lg leading-relaxed text-white/60">
+            Unexpected scenes that won't make sense, but that's the fun of it, right?
+          </p>
+        </div>
+
+        <div class="order-1 glass rounded-[2rem] p-4 lg:order-2">
+          <img src="https://www.oppaiman.com/_next/image/?url=https%3A%2F%2Fcdn-uploads.oppaiman.com%2F693b76d23a57cab967a93c67%2F693b77319a51bb884554afc1%2Fgame-page%2Fimages%2F71d68eae63144950e3677b60bc853a3739f9ff55439d57231ad8853e80a238f8.png&w=1920&q=75" alt="Night over Day screenshot 2"
+            class="rounded-[1.5rem] object-cover transition duration-700 hover:scale-[1.02]" />
+        </div>
+      </div>
+
+      <div class="reveal grid items-center gap-10 lg:grid-cols-2">
+        <div class="glass rounded-[2rem] p-4">
+          <img src="https://www.oppaiman.com/_next/image/?url=https%3A%2F%2Fcdn-uploads.oppaiman.com%2F693b76d23a57cab967a93c67%2F693b77319a51bb884554afc1%2Fgame-page%2Fimages%2Fdd7b3e87b14f84175a6fc14ab595e96e561aaf09324910543a922b37f3367bff.png&w=1920&q=75" alt="Night over Day screenshot 3"
+            class="rounded-[1.5rem] object-cover transition duration-700 hover:scale-[1.02]" />
+        </div>
+
+        <div>
+          <h3 class="text-4xl font-black">Choices that matter.</h3>
+          <p class="mt-5 text-lg leading-relaxed text-white/60">
+            Choices that somewhat matter... or not. 
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Download Again -->
+  <section class="mx-auto max-w-4xl px-6 py-28 text-center">
+    <div class="reveal glass rounded-[2rem] p-10">
+      <h2 class="text-4xl font-black md:text-5xl">
+        Ready to play?
+      </h2>
+
+      <p class="mx-auto mt-5 max-w-xl text-white/60">
+        Download the latest version of Night over Day below.
+      </p>
+      <p class="mx-auto mt-5 max-w-xl text-white/60">
+        Buying on Itch.io helps support myself and the game, but you can also download it for free if you want.
+      </p>
+
+      <div class="mt-8 flex justify-center gap-4">
+
+  <a href="https://github.com/lovebytegames/avn-logos/releases/download/nod/nightoverday-0.15.1-pc.zip" download
+    class="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-purple-900 to-purple-700 px-8 py-4 font-black text-white transition hover:scale-105">
+    <i class="fa-solid fa-download"></i>
+    Download
+  </a>
+
+  <a href="https://lovebyte-games.itch.io/night-over-day" download
+    class="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-red-500 to-red-700 px-8 py-4 font-black text-white transition hover:scale-105">
+    <i class="fa-brands fa-itch-io"></i>
+    Buy on Itch.io
+  </a>
+
+</div>
+    </div>
+  </section>
+
+  <footer class="py-8 text-center text-white/40">
+    © 2026 Lovebyte Games. All rights reserved.
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+
+    function revealOnScroll() {
+      reveals.forEach((item) => {
+        const top = item.getBoundingClientRect().top;
+
+        if (top < window.innerHeight - 100) {
+          item.classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  </script>
+
+</body>
+</html>
