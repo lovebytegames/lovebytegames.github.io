@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recent Changes | Lovebyte Games</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    body { font-family: "Bricolage Grotesque", sans-serif; }
+
+    .glass {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-white">
+
+  <div class="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,#60a5fa55,transparent_35%),radial-gradient(circle_at_bottom_right,#a855f755,transparent_35%)]"></div>
+
+  <header class="fixed left-1/2 top-5 z-50 w-[90%] max-w-6xl -translate-x-1/2 rounded-3xl border border-white/15 bg-white/10 px-6 py-4 backdrop-blur-xl">
+    <div class="flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-black">Lovebyte Games</a>
+
+      <nav class="hidden items-center gap-6 text-sm font-bold text-white/70 sm:flex">
+        <a href="index.html" class="transition hover:text-white">Home</a>
+        <a href="changes.html" class="text-white">Recent Changes</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="px-6 pt-40 text-center">
+    <h1 class="bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 bg-clip-text text-6xl font-black text-transparent md:text-8xl">
+      Recent Changes
+    </h1>
+
+    <p class="mx-auto mt-6 max-w-2xl text-lg text-white/60">
+      Latest updates, new pages, fixes, and improvements.
+    </p>
+  </section>
+
+  <main class="mx-auto mt-20 max-w-4xl px-6 pb-24">
+
+    <div class="space-y-6">
+
+      <div class="glass rounded-3xl p-6">
+        <div class="flex items-center justify-between gap-4">
+          <h2 class="text-2xl font-black">Added Wishlist Page</h2>
+          <span class="rounded-full bg-purple-500/20 px-3 py-1 text-sm text-purple-200">New</span>
+        </div>
+        <p class="mt-3 text-white/60">
+          Added a wishlist page.
+        </p>
+        <p class="mt-4 text-sm text-white/35">May 12, 2026</p>
+      </div>
+
+      <div class="glass rounded-3xl p-6">
+        <div class="flex items-center justify-between gap-4">
+          <h2 class="text-2xl font-black">Added VN Ratings</h2>
+          <span class="rounded-full bg-blue-500/20 px-3 py-1 text-sm text-blue-200">Update</span>
+        </div>
+        <p class="mt-3 text-white/60">
+          Added search, sorting by rating and platform links.
+        </p>
+        <p class="mt-4 text-sm text-white/35">May 9, 2026</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="border-t border-white/10 py-8 text-center text-white/40">
+    © 2026 Lovebyte Games. All rights reserved.
+  </footer>
+
+</body>
+</html>
