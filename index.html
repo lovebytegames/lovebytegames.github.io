@@ -67,47 +67,63 @@
   </style>
 </head>
 
+
+
 <body class="relative flex min-h-screen items-center justify-center bg-slate-950 text-white">
 
-  <!-- Background -->
-  <div class="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,#60a5fa55,transparent_35%),radial-gradient(circle_at_bottom_right,#a855f755,transparent_35%)]"></div>
+ <!-- Background Image -->
+<div class="absolute inset-0 -z-20 overflow-hidden">
+
+  <!-- Image -->
+  <img
+    src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    alt="Background"
+    class="h-full w-full object-cover blur-md scale-110 opacity-45"
+  />
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-slate-950/80"></div>
+
+  <!-- Gradient Glow -->
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#60a5fa33,transparent_35%),radial-gradient(circle_at_bottom_right,#a855f733,transparent_35%)]"></div>
+
+</div>
 
   <!-- Glow -->
-  <div class="animate-glow absolute left-20 top-20 -z-10 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"></div>
+  <div class="animate-glow absolute left-20 top-20 -z-10 h-96 w-96 rounded-full bg-purple-500/20 blur-3xl"></div>
 
   <div class="animate-glow absolute bottom-10 right-10 -z-10 h-96 w-96 rounded-full bg-purple-500/20 blur-3xl"></div>
 
   <!-- Maintenance Card -->
-  <div class="glass animate-fade-up mx-6 w-full max-w-2xl rounded-[2.5rem] p-10 text-center shadow-2xl">
+  <div class="glass animate-fade-up mx-6 w-full max-w-2xl rounded-[2.5rem] p-10 text-center shadow-2xl backdrop-blur-xl">
 
     <!-- Icon -->
-    <div class="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-yellow-400/10 text-5xl text-yellow-300">
+    <div class="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-purple-400/10 text-5xl text-purple-300">
       <i class="fa-solid fa-screwdriver-wrench"></i>
     </div>
 
     <!-- Title -->
-    <h1 class="mt-8 bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 bg-clip-text text-5xl font-black text-transparent md:text-7xl">
+    <h1 class="mt-8 bg-gradient-to-r from-purple-600 via-purple-300 to-purple-600 bg-clip-text text-5xl font-black text-transparent md:text-7xl">
       Under Maintenance
     </h1>
 
     <!-- Text -->
-    <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/60">
-      Lovebyte Games is currently undergoing updates and improvements.
-      The site is temporarily unavailable while maintenance is being performed.
+    <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/60 bg-black/30 p-4 rounded-lg border border-white/10">
+        Our website is currently down for a reason.
     </p>
 
     <!-- Status -->
-    <div class="mt-8 inline-flex items-center gap-3 rounded-full border border-green-400/20 bg-green-400/10 px-5 py-3 text-sm font-bold text-green-300">
+    <div class="mt-8 inline-flex items-center gap-3 rounded-full border border-red-400/20 bg-red-400/10 px-5 py-3 text-sm font-bold text-red-300">
 
-      <div class="h-3 w-3 animate-pulse rounded-full bg-green-400"></div>
+      <div class="h-3 w-3 animate-pulse rounded-full bg-red-400"></div>
 
-      Maintenance In Progress
+      Offline - We'll be back soon!
 
     </div>
 
     <!-- ETA -->
-    <p class="mt-8 text-sm text-white/40">
-      Estimated return: May 15, 2026.
+    <p class="mt-8 text-md text-white/40">
+      <i class="fa-solid fa-clock"></i> Estimated return: May 14, 2026 @ 4:30 PM BST.
     </p>
 
   </div>
