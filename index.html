@@ -2,132 +2,365 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <title>Under Maintenance | Lovebyte Games</title>
-
-  <!-- Tailwind -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lovebyte Games
+  </title>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- FontAwesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-  />
-
-  <!-- Google Font -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.ico">
 
   <style>
-    body {
-      font-family: "Bricolage Grotesque", sans-serif;
-      overflow: hidden;
+        h1 {
+      font-family: 'Bricolage Grotesque', sans-serif;
     }
 
-    @keyframes pulseGlow {
-      0%, 100% {
-        transform: scale(1);
-        opacity: 0.45;
-      }
-
-      50% {
-        transform: scale(1.08);
-        opacity: 0.7;
-      }
-    }
 
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .animate-glow {
-      animation: pulseGlow 7s ease-in-out infinite;
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+    }
+
+    @keyframes glowMove {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(40px, -40px); }
     }
 
     .animate-fade-up {
+      opacity: 0;
       animation: fadeUp 0.9s ease forwards;
     }
 
-    .glass {
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(24px);
-      border: 1px solid rgba(255,255,255,0.12);
+    .animate-float {
+      animation: float 5s ease-in-out infinite;
     }
+
+    .animate-glow {
+      animation: glowMove 8s ease-in-out infinite;
+    }
+
+    .delay-25 { animation-delay: .025s; }
+    .delay-100 { animation-delay: .1s; }
+    .delay-200 { animation-delay: .2s; }
+    .delay-300 { animation-delay: .3s; }
+    .delay-400 { animation-delay: .4s; }
+    .delay-500 { animation-delay: .5s; }
+    .delay-600 { animation-delay: .6s; }
+
+
+    .shine-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.5),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+.shine-btn:hover::before {
+  animation: shine 0.8s ease;
+}
+
+.lb-logo {
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+
   </style>
 </head>
 
+<body class="min-h-screen overflow-x-hidden scroll-smooth bg-black/95 text-white">
+
+  <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#1A1A1A,transparent_35%),radial-gradient(circle_at_bottom_right,#1A1A1A,transparent_35%)]"></div>
+
+  <div class="animate-glow fixed left-20 top-28 -z-10 h-72 w-72 rounded-full bg-black/20 blur-3xl"></div>
+  <div class="animate-glow fixed bottom-20 right-20 -z-10 h-72 w-72 rounded-full bg-black/20 blur-3xl"></div>
+
+  
+
+<header
+  class="mx-auto mt-5 flex w-[90%] max-w-4xl items-center justify-between rounded-3xl border border-white/10 bg-white/10 px-8 py-5 shadow-2xl backdrop-blur-xl">
+
+  <!-- Left Nav -->
+  <nav class="flex items-center gap-3 text-md text-white/70">
+
+    <!--
+    <a href="#work"
+      class="rounded-full px-5 py-2 text-md font-bold text-white/70 transition hover:bg-white/10 hover:text-white">
+      Work
+    </a> -->
+
+    <a href="#contact"
+      class="rounded-full bg-white/10 border border-white/20 px-5 py-2 text-sm font-bold text-white/70 transition hover:bg-white/30 hover:text-white">
+      Contact
+    </a>
+
+    <a href="#faq"
+      class="rounded-full bg-white/10 border border-white/20 px-5 py-2 text-sm font-bold text-white/70 transition hover:bg-white/30 hover:text-white">
+      FAQ
+    </a>
+
+    <a href="clients.html"
+      class="rounded-full bg-orange-500/20 px-5 py-2 text-sm font-bold text-orange-200 transition hover:bg-orange-500/30 border border-orange-500/30">
+      Clients
+    </a>
+
+  </nav>
+
+  <!-- Center Logo 
+  <a href="index.html"
+    class="font-bold text-3xl tracking-tight">
+    Lovebyte Games
+  </a> -->
+
+  <!-- Right Nav -->
+  <nav class="flex items-center gap-3">
+
+    <a href="vn.html"
+      class="rounded-full bg-blue-500/20 px-5 py-2 text-sm font-bold text-white/70 transition hover:bg-blue-500/30 border border-blue-500/30">
+      VN Ratings
+    </a>
+
+    <a href="wishlist.html"
+      class="rounded-full bg-yellow-500/20 px-5 py-2 text-sm font-bold text-yellow-200 transition hover:bg-yellow-500/30 border border-yellow-500/30">
+      Wishlist
+    </a>
+
+    <a href="nod.html"
+      class="rounded-full bg-pink-500/20 px-5 py-2 text-sm font-bold text-pink-200 transition hover:bg-pink-500/30 border border-pink-500/30">
+      Night over Day
+    </a>
+
+    <a href="#donate"
+      class="rounded-full border border-white/10 bg-white/10 px-5 py-2 text-sm font-bold text-white transition hover:bg-white/20">
+      Donate
+    </a>
+
+  </nav>
+
+</header>
 
 
-<body class="relative flex min-h-screen items-center justify-center bg-slate-950 text-white">
 
- <!-- Background Image -->
-<div class="absolute inset-0 -z-20 overflow-hidden">
 
-  <!-- Image -->
-  <img
-    src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    alt="Background"
-    class="h-full w-full object-cover blur-md scale-110 opacity-45"
-  />
+  
 
-  <!-- Dark Overlay -->
-  <div class="absolute inset-0 bg-slate-950/80"></div>
+  <!-- Recent Changes Banner -->
+<div class="mx-auto mt-4 flex w-[90%] max-w-4xl items-center justify-center rounded-2xl border border-red-500/20 bg-red-500/10 px-6 py-3 text-sm text-white/70 backdrop-blur-xl">
 
-  <!-- Gradient Glow -->
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#60a5fa33,transparent_35%),radial-gradient(circle_at_bottom_right,#a855f733,transparent_35%)]"></div>
+  <i class="fa-solid fa-clock-rotate-left mr-2 text-red-300"></i>
+
+  <span>
+    Want to see recent changes to the site?
+    <a href="changes.html"
+      class="ml-1 font-bold text-red-300 transition hover:text-red-200 hover:underline">
+      Go here.
+    </a>
+  </span>
 
 </div>
 
-  <!-- Glow -->
-  <div class="animate-glow absolute left-20 top-20 -z-10 h-96 w-96 rounded-full bg-purple-500/20 blur-3xl"></div>
+<!-- Upcoming Maintenance Banner -->
+<div class="mx-auto mt-3 flex w-[90%] max-w-4xl items-center justify-center rounded-2xl border border-red-500/20 bg-red-500/10 px-6 py-3 text-sm text-white/70 backdrop-blur-xl">
 
-  <div class="animate-glow absolute bottom-10 right-10 -z-10 h-96 w-96 rounded-full bg-purple-500/20 blur-3xl"></div>
+  <i class="fa-solid fa-screwdriver-wrench mr-2 text-red-300"></i>
 
-  <!-- Maintenance Card -->
-  <div class="glass animate-fade-up mx-6 w-full max-w-2xl rounded-[2.5rem] p-10 text-center shadow-2xl backdrop-blur-xl">
+  <span>
+    Want to see upcoming maintenance?
+    <a href="upcoming_maintenance.html"
+      class="ml-1 font-bold text-red-300 transition hover:text-red-200 hover:underline">
+      Go here.
+    </a>
+  </span>
 
-    <!-- Icon -->
-    <div class="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-purple-400/10 text-5xl text-purple-300">
-      <i class="fa-solid fa-screwdriver-wrench"></i>
-    </div>
+</div>
 
-    <!-- Title -->
-    <h1 class="mt-8 bg-gradient-to-r from-purple-600 via-purple-300 to-purple-600 bg-clip-text text-5xl font-black text-transparent md:text-7xl">
-      Under Maintenance
+  <section class="px-6 py-20 text-center">
+    <h1 class="mx-auto max-w-4xl animate-fade-up bg-clip-text text-5xl font-black leading-[1.3] md:text-8xl py-5">
+  Lovebyte Logos
     </h1>
 
-    <!-- Text -->
-    <p class="mx-auto mt-6 max-w-xl text-md leading-relaxed text-white/60 bg-black/30 p-4 rounded-lg border border-white/10">
-        Our website is down for a color rebranding.
+    <p class="delay-200 mx-auto mt-6 max-w-2xl animate-fade-up text-lg text-white/65">
+      Clean, modern logos for <span class="text-white/80 font-bold">visual novels</span>.
     </p>
 
-    <!-- Status -->
-    <div class="mt-8 inline-flex items-center gap-3 rounded-full border border-red-400/20 bg-red-400/10 px-5 py-3 text-sm font-bold text-red-300">
+  </section>
 
-      <div class="h-3 w-3 animate-pulse rounded-full bg-red-400"></div>
+  <section id="work" class="mx-auto max-w-6xl px-6 py-8">
+    <h2 class="mb-8 animate-fade-up text-center text-4xl font-bold"><i class="fa-solid fa-star"></i> Featured Commissions <i class="fa-solid fa-star"></i></h2>
 
-      Offline - We'll be back soon!
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
 
+  <div class="group delay-25 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-3 hover:rotate-1 hover:bg-white/15">
+    <div class="mb-5 flex h-32 items-center justify-center rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+      <img src="BC_logo.png" class="h-full object-contain p-2">
     </div>
-
-    <!-- ETA 
-    <p class="mt-8 text-md text-white/40">
-      <i class="fa-solid fa-clock"></i> Estimated return:
+    <h3 class="text-xl font-bold">Beyond Constraints</h3>
+    <p class="mt-2 text-white/60 underline">
+      <a href="https://subscribestar.adult/davos" target="_blank" class="hover:text-red-400">https://subscribestar.adult/davos</a>
     </p>
--->
-
   </div>
+
+  <div class="group delay-25 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-3 hover:-rotate-1 hover:bg-white/15">
+    <div class="mb-5 flex h-32 items-center justify-center rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+      <img src="ex_game_1.png" class="h-full object-contain p-2">
+    </div>
+    <h3 class="text-xl font-bold">Example Game Name</h3>
+    <p class="mt-2 text-white/60">Example website.</p>
+  </div>
+
+  <div class="group delay-25 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-3 hover:rotate-1 hover:bg-white/15">
+    <div class="mb-5 flex h-32 items-center justify-center rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+      <img src="ex_game_2.png" class="h-full object-contain p-2">
+    </div>
+    <h3 class="text-xl font-bold">Example Game Name</h3>
+    <p class="mt-2 text-white/60">Example website.</p>
+  </div>
+
+  <div class="group delay-25 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-3 hover:-rotate-1 hover:bg-white/15">
+    <div class="mb-5 flex h-32 items-center justify-center rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+      <img src="ex_game_3.png" class="h-full object-contain p-2">
+    </div>
+    <h3 class="text-xl font-bold">Example Game Name</h3>
+    <p class="mt-2 text-white/60">Example website.</p>
+  </div>
+</div>
+  </section>
+
+  <!--<section id="about" class="mx-auto max-w-3xl px-6 py-16 text-center">
+    <h2 class="mb-8 animate-fade-up text-4xl font-bold">About</h2>
+
+    <div class="animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-8 text-white/70 shadow-2xl backdrop-blur-xl transition duration-500 hover:scale-[1.02] hover:bg-white/15">
+      I design modern, bold, and memorable logos for games and brands.
+      My style focuses on simplicity, clarity, and impact.
+    </div>
+  </section> -->
+
+  <section id="contact" class="mx-auto max-w-3xl px-6 py-16 text-center">
+    <h2 class="mb-8 animate-fade-up text-4xl font-bold"><i class="fa-solid fa-comment"></i> Contact</h2>
+
+    <div class="animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-8 text-white/70 shadow-2xl backdrop-blur-xl transition duration-500 hover:scale-[1.02] hover:bg-white/15">
+      Do you want to work together? I'm open to logo requests via Discord.
+      <br />
+
+      <div class="mt-3 inline-block rounded-full bg-gradient-to-r from-white/20 to-white/20 px-7 py-3 font-bold text-white transition duration-300">
+        <i class="fa-brands fa-discord"></i> @lovebytegames on Discord
+      </div>
+    </div>
+  </section>
+
+  <section id="donate" class="mx-auto max-w-3xl px-6 py-16 text-center">
+  <h2 class="mb-4 animate-fade-up text-4xl font-bold"><i class="fa-solid fa-hand-holding-dollar" style="color: rgb(255, 255, 255);"></i> Support My Work</h2>
+
+  <p class="mx-auto mb-8 max-w-2xl animate-fade-up text-white/65">
+    Donations help support my work and allow me to continue creating logos for visual novels. Your support is greatly appreciated!
+  </p>
+
+  <div class="animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur-xl">
+
+  <a href="https://ko-fi.com/lovebytegames" target="_blank"
+  class="shine-btn inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-white/20 to-white/20 px-6 py-3 text-base font-bold text-white transition duration-300 hover:scale-105 hover:shadow-lg">
+
+  <span class="leading-none"><strong>Donate on Ko-fi</strong></span>
+</a>
+
+    <p class="mt-4 text-sm text-white/45">
+      Donations go towards my PayPal, fees are included in the amount you choose to donate.
+    </p>
+  </div>
+</section>
+
+  <section id="faq" class="mx-auto max-w-4xl px-6 py-16">
+  <h2 class="mb-8 animate-fade-up text-center text-4xl font-bold"><i class="fa-solid fa-circle-question"></i> FAQ</h2>
+
+  <div class="space-y-5">
+    <details class="animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-300 hover:bg-white/15">
+      <summary class="cursor-pointer text-lg font-bold">How long does a logo take?</summary>
+      <p class="mt-4 text-white/65">
+        I can take just over an hour or more to create a logo, it only depends on the complexity and revisions.
+      </p>
+    </details>
+
+    <details class="animate-fade-up delay-100 rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-300 hover:bg-white/15">
+      <summary class="cursor-pointer text-lg font-bold">How much does a logo cost?</summary>
+      <p class="mt-4 text-white/65">
+        The price depends on the design elements and the time required.<br>
+        An hour or more of work is a minimum of <strong>25 GBP</strong>.
+      </p>
+    </details>
+
+    <details class="animate-fade-up delay-200 rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-300 hover:bg-white/15">
+      <summary class="cursor-pointer text-lg font-bold">Can I request changes?</summary>
+      <p class="mt-4 text-white/65">
+        Yes, revisions are free, if you're not satisfied with the logo, I will work with you until you are happy with the final design.
+      </p>
+    </details>
+
+    <details class="animate-fade-up delay-200 rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-300 hover:bg-white/15">
+      <summary class="cursor-pointer text-lg font-bold">How do I pay?</summary>
+      <p class="mt-4 text-white/65">
+        Payment can be made via PayPal. I will provide you with my PayPal username once we agree on the logo details and price.
+      </p>
+    </details>
+
+    <details class="animate-fade-up delay-300 rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl transition duration-300 hover:bg-white/15">
+      <summary class="cursor-pointer text-lg font-bold">What files do I receive?</summary>
+      <p class="mt-4 text-white/65">
+        You will recieve a high-resolution PNG with a transparent background in a zip file to prevent Discord compression.
+      </p>
+    </details>
+  </div>
+</section>
+
+  <footer class="py-8 text-center text-white/50">
+    © 2026 Lovebyte Games. All rights reserved.
+  </footer>
+
+<script>
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("wheel", (e) => {
+    if (e.deltaY > 0) {
+      navbar.classList.add("-translate-y-[140%]", "opacity-0");
+    } else {
+      navbar.classList.remove("-translate-y-[140%]", "opacity-0");
+    }
+  });
+</script>
+
+
+<script>
+  const btn = document.querySelector("button");
+  const menu = document.getElementById("mobileMenu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
 
 </body>
 </html>

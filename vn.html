@@ -95,7 +95,7 @@
 
 #cardScroller {
   scrollbar-width: thin;
-  scrollbar-color: #a78bfa transparent;
+  scrollbar-color: #d5d5d5 transparent;
 }
 
 #cardScroller::-webkit-scrollbar {
@@ -107,12 +107,12 @@
 }
 
 #cardScroller::-webkit-scrollbar-thumb {
-  background: #a78bfa;
+  background: #757575;
   border-radius: 999px;
 }
 
 #cardScroller::-webkit-scrollbar-thumb:hover {
-  background: #c4b5fd;
+  background: #424242;
 }
 
 #cardScroller::-webkit-scrollbar-button {
@@ -227,7 +227,7 @@
   </style>
 </head>
 
-<body class="min-h-screen overflow-x-hidden bg-slate-950 text-white">
+<body class="min-h-screen overflow-x-hidden bg-black/95 text-white">
 
   <div class="fixed inset-0 -z-20 overflow-hidden">
 
@@ -239,16 +239,16 @@
   />
 
   <!-- DARK OVERLAY (important for readability) -->
-  <div class="absolute inset-0 bg-slate-950/70"></div>
+  <div class="absolute inset-0 bg-black/70"></div>
 
 </div>  
 
   <!-- Background -->
-  <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#60a5fa55,transparent_35%),radial-gradient(circle_at_bottom_right,#a78bfa55,transparent_10%)]"></div>
+  <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#1A1A1A,transparent_35%),radial-gradient(circle_at_bottom_right,#1A1A1A,transparent_10%)]"></div>
 
-  <div class="animate-glow fixed left-20 top-28 -z-10 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl"></div>
+  <div class="animate-glow fixed left-20 top-28 -z-10 h-72 w-72 rounded-full bg-black/20 blur-3xl"></div>
 
-  <div class="animate-glow fixed bottom-20 right-20 -z-10 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl"></div>
+  <div class="animate-glow fixed bottom-20 right-20 -z-10 h-72 w-72 rounded-full bg-black/20 blur-3xl"></div>
 
   <!-- Navbar -->
   <header id="navbar"
@@ -270,19 +270,19 @@
   </header>
 
   <!-- Hero -->
-  <section class="px-6 py-24 text-center">
-    <h1 class="font-[Bricolage_Grotesque] animate-fade-up bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 bg-clip-text py-2 text-5xl font-black leading-[1.2] text-transparent md:text-7xl">
+  <section class="px-6 py-28 text-center">
+    <h1 class="font-[Bricolage_Grotesque] animate-fade-up bg-clip-text py-2 text-5xl font-black leading-[1.2] md:text-7xl">
       Visual Novel Ratings
     </h1>
 
     <p class="delay-100 mx-auto mt-6 max-w-2xl animate-fade-up text-lg text-white/60">
-      Some of my played <strong style="color: #b56ce3;">visual novels</strong> rated.
+      Some of my played <strong style="color: #ffffff;">visual novels</strong> rated.
     </p>
   </section>
 
 
 <!-- VN List -->
-<div class="relative max-w-[1400px] mx-auto">
+<div class="relative max-w-[1440px] mx-auto">
 
       <div class="mb-1 flex justify-start">
   <button onclick="sortByRating()"
@@ -305,6 +305,11 @@
     <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-white/50"></i>
   </div>
 
+  <div class="mt-3 flex items-center gap-2 pl-2 text-sm text-white/40">
+  <i class="fa-solid fa-clock-rotate-left text-xs"></i>
+  <span>Last Updated: May 10, 2026</span>
+</div>
+
   <div id="noResults"
   class="hidden text-center text-white/50 mt-10 text-lg">
   No Results Found
@@ -324,7 +329,7 @@
 
   <!-- SCROLLER -->
 <div id="cardScroller"
-  class="flex gap-8 overflow-x-scroll scroll-smooth py-6 pb-8 snap-x snap-mandatory">
+  class="flex gap-4 overflow-x-scroll scroll-smooth py-6 pb-8 snap-x snap-mandatory">
 
   
 
