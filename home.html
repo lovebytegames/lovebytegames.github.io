@@ -105,67 +105,114 @@
 
   
 
-<header
-  class="mx-auto mt-5 flex w-[90%] max-w-4xl items-center justify-between rounded-3xl border border-white/10 bg-white/10 px-8 py-5 shadow-2xl backdrop-blur-xl">
+<header id="navbar"
+  class="mx-auto mt-5 flex w-[90%] max-w-6xl items-center justify-between rounded-md border border-white/10 bg-white/10 px-8 py-5 shadow-2xl backdrop-blur-xl">
 
   <!-- Left Nav -->
-  <nav class="flex items-center gap-3 text-md text-white/70">
-
-    <!--
-    <a href="#work"
-      class="rounded-full px-5 py-2 text-md font-bold text-white/70 transition hover:bg-white/10 hover:text-white">
-      Work
-    </a> -->
+  <nav class="hidden items-center gap-3 text-md text-white/70 md:flex">
 
     <a href="#contact"
-      class="rounded-full bg-white/10 border border-white/20 px-5 py-2 text-sm font-bold text-white/70 transition hover:bg-white/30 hover:text-white">
+      class="rounded-md bg-white/10 border border-white/20 px-5 py-2 text-md font-bold text-white/70 transition hover:bg-white/30 hover:text-white">
       Contact
     </a>
 
     <a href="#faq"
-      class="rounded-full bg-white/10 border border-white/20 px-5 py-2 text-sm font-bold text-white/70 transition hover:bg-white/30 hover:text-white">
+      class="rounded-md bg-white/10 border border-white/20 px-5 py-2 text-md font-bold text-white/70 transition hover:bg-white/30 hover:text-white">
       FAQ
     </a>
 
     <a href="clients.html"
-      class="rounded-full bg-orange-500/20 px-5 py-2 text-sm font-bold text-orange-200 transition hover:bg-orange-500/30 border border-orange-500/30">
+      class="rounded-md bg-orange-500/20 px-5 py-2 text-md font-bold text-orange-200 transition hover:bg-orange-500/30 border border-orange-500/30">
       Clients
     </a>
 
   </nav>
 
-  <!-- Center Logo 
-  <a href="index.html"
-    class="font-bold text-3xl tracking-tight">
-    Lovebyte Games
-  </a> -->
+  <a href="home.html" class="text-lg font-bold tracking-tight text-white md:hidden">
+    Home
+  </a>
 
   <!-- Right Nav -->
-  <nav class="flex items-center gap-3">
+  <div class="flex items-center gap-3">
+    <nav class="hidden items-center gap-3 md:flex">
+      <a href="vn.html"
+        class="rounded-md bg-purple-500/20 px-5 py-2 text-md font-bold text-purple-200 transition hover:bg-purple-500/30 border border-purple-500/30">
+        VN Ratings
+      </a>
+
+      <a href="wishlist.html"
+        class="rounded-md bg-yellow-500/20 px-5 py-2 text-md font-bold text-yellow-200 transition hover:bg-yellow-500/30 border border-yellow-500/30">
+        Wishlist
+      </a>
+
+      <a href="nod.html"
+        class="rounded-md bg-pink-500/20 px-5 py-2 text-md font-bold text-pink-200 transition hover:bg-pink-500/30 border border-pink-500/30">
+        Night over Day
+      </a><span class="hidden md:inline text-white/30">│</span>
+
+      <a href="donate.html"
+        class="rounded-md border border-green-300/40 bg-green-500/40 px-5 py-2 text-md font-bold text-green-200 transition hover:bg-green-500/40 hover:border-green-500/40 hover:text-green-300 hover:scale-105 hover:shadow-[0_0_10px_rgba(34,197,94,0.5)]">
+        Donate
+      </a>
+
+      <a href="subscribe.html"
+        class="rounded-md border border-blue-300/40 bg-blue-500/40 px-5 py-2 text-md font-bold text-blue-200 transition hover:bg-blue-500/40 hover:border-blue-500/40 hover:text-blue-300 hover:scale-105 hover:shadow-[0_0_10px_rgba(59,130,246,0.5)]">
+        Subscribe
+      </a>
+    </nav>
+
+    <button id="mobileNavToggle" type="button" aria-expanded="false" aria-label="Toggle navigation"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/20 bg-white/5 text-white transition hover:bg-white/10 md:hidden">
+      <i id="mobileNavIconOpen" class="fa-solid fa-bars text-lg"></i>
+      <i id="mobileNavIconClose" class="hidden fa-solid fa-xmark text-lg"></i>
+    </button>
+  </div>
+
+</header>
+
+<div id="mobileNavMenu" class="mx-auto mt-3 hidden w-[90%] max-w-6xl rounded-3xl border border-white/10 bg-white/10 px-4 py-4 shadow-2xl backdrop-blur-xl md:hidden">
+  <nav class="grid gap-3">
+    <a href="#contact"
+      class="rounded-md bg-white/10 border border-white/20 px-5 py-3 text-center text-base font-bold text-white/70 transition hover:bg-white/20 hover:text-white">
+      Contact
+    </a>
+
+    <a href="#faq"
+      class="rounded-md bg-white/10 border border-white/20 px-5 py-3 text-center text-base font-bold text-white/70 transition hover:bg-white/20 hover:text-white">
+      FAQ
+    </a>
+
+    <a href="clients.html"
+      class="rounded-md bg-orange-500/20 border border-orange-500/30 px-5 py-3 text-center text-base font-bold text-orange-200 transition hover:bg-orange-500/30">
+      Clients
+    </a>
 
     <a href="vn.html"
-      class="rounded-full bg-blue-500/20 px-5 py-2 text-sm font-bold text-white/70 transition hover:bg-blue-500/30 border border-blue-500/30">
+      class="rounded-md bg-purple-500/20 border border-purple-500/30 px-5 py-3 text-center text-base font-bold text-purple-200 transition hover:bg-purple-500/30">
       VN Ratings
     </a>
 
     <a href="wishlist.html"
-      class="rounded-full bg-yellow-500/20 px-5 py-2 text-sm font-bold text-yellow-200 transition hover:bg-yellow-500/30 border border-yellow-500/30">
+      class="rounded-md bg-yellow-500/20 border border-yellow-500/30 px-5 py-3 text-center text-base font-bold text-yellow-200 transition hover:bg-yellow-500/30">
       Wishlist
     </a>
 
     <a href="nod.html"
-      class="rounded-full bg-pink-500/20 px-5 py-2 text-sm font-bold text-pink-200 transition hover:bg-pink-500/30 border border-pink-500/30">
+      class="rounded-md bg-pink-500/20 border border-pink-500/30 px-5 py-3 text-center text-base font-bold text-pink-200 transition hover:bg-pink-500/30">
       Night over Day
     </a>
 
     <a href="donate.html"
-      class="rounded-full border border-green-300/40 bg-green-500/40 px-5 py-2 text-sm font-bold text-green-200 transition hover:bg-green-500/40 hover:border-green-500/40 hover:text-green-300 hover:scale-105">
+      class="rounded-md border border-green-300/40 bg-green-500/40 px-5 py-3 text-center text-base font-bold text-green-200 transition hover:bg-green-500/40 hover:border-green-500/40 hover:text-green-300">
       Donate
     </a>
 
+    <a href="subscribe.html"
+      class="rounded-md border border-blue-300/40 bg-blue-500/40 px-5 py-3 text-center text-base font-bold text-blue-200 transition hover:bg-blue-500/40 hover:border-blue-500/40 hover:text-blue-300">
+      Subscribe
+    </a>
   </nav>
-
-</header>
+</div>
 
 
 
@@ -173,7 +220,7 @@
   
 
   <!-- Recent Changes Banner -->
-<div class="mx-auto mt-4 flex w-[90%] max-w-4xl items-center justify-center rounded-2xl border border-red-500/20 bg-red-500/10 px-6 py-3 text-sm text-white/70 backdrop-blur-xl">
+<div class="mx-auto mt-4 flex w-[90%] max-w-6xl items-center justify-center rounded-md border border-red-500/20 bg-red-500/10 px-6 py-3 text-sm text-white/70 backdrop-blur-xl">
 
   <i class="fa-solid fa-clock-rotate-left mr-2 text-red-300"></i>
 
@@ -188,7 +235,7 @@
 </div>
 
 <!-- Upcoming Maintenance Banner -->
-<div class="mx-auto mt-3 flex w-[90%] max-w-4xl items-center justify-center rounded-2xl border border-red-500/20 bg-red-500/10 px-6 py-3 text-sm text-white/70 backdrop-blur-xl">
+<div class="mx-auto mt-3 flex w-[90%] max-w-6xl items-center justify-center rounded-md border border-red-500/20 bg-red-500/10 px-6 py-3 text-sm text-white/70 backdrop-blur-xl">
 
   <i class="fa-solid fa-screwdriver-wrench mr-2 text-red-300"></i>
 
@@ -349,8 +396,24 @@
 
 <script>
   const navbar = document.getElementById("navbar");
+  const mobileToggle = document.getElementById("mobileNavToggle");
+  const mobileMenu = document.getElementById("mobileNavMenu");
+  const mobileIconOpen = document.getElementById("mobileNavIconOpen");
+  const mobileIconClose = document.getElementById("mobileNavIconClose");
+
+  if (mobileToggle) {
+    mobileToggle.addEventListener("click", () => {
+      const isHidden = mobileMenu?.classList.toggle("hidden");
+      if (mobileIconOpen && mobileIconClose) {
+        mobileIconOpen.classList.toggle("hidden");
+        mobileIconClose.classList.toggle("hidden");
+      }
+      mobileToggle.setAttribute("aria-expanded", isHidden ? "false" : "true");
+    });
+  }
 
   window.addEventListener("wheel", (e) => {
+    if (!navbar) return;
     if (e.deltaY > 0) {
       navbar.classList.add("-translate-y-[140%]", "opacity-0");
     } else {
