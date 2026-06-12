@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newswire | Lovebyte Games</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #000;
+      }
+
+      .news-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .news-card img {
+        transition: all 0.6s ease;
+      }
+
+      .fade-in {
+        animation: fade 0.6s ease forwards;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h1, h2, h3, p, a, span, footer {
+        font-family: 'Bricolage Grotesque', sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="text-white">
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-black/80 border-b border-zinc-900">
+      <div class="max-w-[1600px] mx-auto px-8">
+        <div class="h-20 flex items-center justify-between">
+          <div class="flex items-center gap-8">
+            <h1 class="font-black tracking-widest text-xl">NEWSWIRE</h1>
+            <nav class="hidden md:flex gap-6 text-sm text-zinc-400">
+              <a href="home.html" class="hover:text-white transition">Home</a><span class="text-zinc-500">|</span>
+              <a href="newswire.html" class="hover:text-white transition">Newswire</a><span class="text-zinc-500">|</span>
+              <a href="nod.html" class="hover:text-white transition">Night over Day</a>
+            </nav>
+          </div>
+          <a href="subscribe.html" class="rounded-md bg-blue-500 text-white border border-blue-300/40 font-bold px-5 py-2 hover:scale-105 transition">Subscribe</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div class="bg-black border-b border-zinc-900">
+      <div class="max-w-[1600px] mx-auto px-8 py-3">
+        <nav class="text-sm text-zinc-400">
+          <a href="home.html" class="hover:text-white transition">Home</a>
+          <span class="mx-2">/</span>
+          <span class="text-white font-Bricolage-Grotesque">Newswire</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="max-w-[1600px] mx-auto px-8 py-10 fade-in">
+      <div class="grid lg:grid-cols-[1.8fr_0.8fr] gap-12 items-start">
+        <!-- IMAGE -->
+        <div class="relative overflow-hidden rounded-md">
+          <img src="assets/img/BC_logo.png" class="w-full object-cover p-36" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+        </div>
+
+        <!-- TEXT -->
+        <div class="lg:pt-4">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="text-[#fff] uppercase font-bold tracking-wider text-xs">Beyond Constraints</span>
+            <span class="text-zinc-500 text-sm">June 8, 2026</span>
+          </div>
+
+          <h1 class="text-5xl md:text-6xl xl:text-7xl font-black tracking-tight leading-[0.95]">
+            Beyond Constraints Announces New Logo On Discord
+          </h1>
+
+          <p class="text-zinc-400 mt-8 text-lg leading-relaxed">
+            Mist_Step the developer of Beyond Constraints unveils a new logo.
+          </p>
+
+          <a href="newswire/beyond-constraints-announces-new-logo-on-discord.html" class="mt-8 inline-block bg-white text-black font-bold rounded-md px-6 py-3 hover:bg-gray-200">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWS GRID -->
+    <section class="bg-[#050505] border-t border-zinc-900">
+      <div class="max-w-[1600px] mx-auto px-8 py-16">
+        <h2 class="text-4xl font-black mb-12">Latest News</h2>
+
+        <h3 class="text-2xl font-bold text-zinc-400 mb-6">Nothing to see here — yet.</h3>
+
+        <!--
+        <div class="grid lg:grid-cols-3 gap-8">
+          FEATURE CARD
+          <article class="news-card lg:col-span-2 bg-[#111] rounded-md overflow-hidden border border-zinc-800">
+            <img src="#" class="aspect-[16/8] w-full object-cover" />
+            <div class="p-8">
+              <div class="flex gap-3 mb-4 text-sm">
+                <span class="text-[#fcaf17]">...</span>
+                <span class="text-zinc-500">...</span>
+              </div>
+              <h3 class="text-4xl font-black leading-tight">...</h3>
+            </div>
+          </article>
+
+          SIDEBAR CARD
+          <article class="news-card bg-[#111] rounded-md overflow-hidden border border-zinc-800">
+            <img src="#" class="aspect-video w-full object-cover" />
+            <div class="p-6">
+              <div class="flex gap-3 mb-3 text-sm">
+                <span class="text-[#fcaf17]">...</span>
+                <span class="text-zinc-500">...</span>
+              </div>
+              <h3 class="text-2xl font-bold leading-snug">...</h3>
+            </div>
+          </article>
+
+          MORE CARDS
+          <article class="news-card bg-[#111] rounded-md overflow-hidden border border-zinc-800">
+            <img src="#" class="aspect-video w-full object-cover" />
+            <div class="p-6">
+              <div class="flex gap-3 mb-3 text-sm">
+                <span class="text-[#fcaf17]">...</span>
+                <span class="text-zinc-500">...</span>
+              </div>
+              <h3 class="text-2xl font-bold">...</h3>
+            </div>
+          </article>
+
+          <article class="news-card bg-[#111] rounded-md overflow-hidden border border-zinc-800">
+            <img src="#" class="aspect-video w-full object-cover" />
+            <div class="p-6">
+              <div class="flex gap-3 mb-3 text-sm">
+                <span class="text-[#fcaf17]">...</span>
+                <span class="text-zinc-500">...</span>
+              </div>
+              <h3 class="text-2xl font-bold">...</h3>
+            </div>
+          </article>
+
+          <article class="news-card bg-[#111] rounded-md overflow-hidden border border-zinc-800">
+            <img src="#" class="aspect-video w-full object-cover" />
+            <div class="p-6">
+              <div class="flex gap-3 mb-3 text-sm">
+                <span class="text-[#fcaf17]">...</span>
+                <span class="text-zinc-500">...</span>
+              </div>
+              <h3 class="text-2xl font-bold">...</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  -->
+    
+
+    <footer class="bg-black/80 border-t border-zinc-900">
+      <div class="max-w-[1600px] mx-auto px-8 py-6 text-center text-sm text-zinc-500">
+        &copy; 2026 Lovebyte Games. All rights reserved.
+      </div>
+  </body>
+</html>
