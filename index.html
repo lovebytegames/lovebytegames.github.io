@@ -120,7 +120,7 @@
   <script>
     // AUTO SKIP IF REMEMBERED
     if(localStorage.getItem("ageVerified") === "true"){
-      window.location.href = "./home";
+      window.location.href = "home.html";
     }
 
     // ENTER
@@ -134,13 +134,19 @@
       }
 
       // CHANGE THIS TO YOUR MAIN PAGE
-      window.location.href = "./home";
+      window.location.href = "home.html";
     }
 
     // LEAVE
     function leaveSite(){
       window.location.href = "https://google.com";
     }
+
+
+
+
+  // REDIRECT FOR MAINTENANCE
+  window.location.href = "maintenance.html";
   </script>
 
 </body>
